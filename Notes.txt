@@ -1,0 +1,43 @@
+1) schema.sql 	:file part resources directory automatically executes whenever application started
+2) spring.h2.console.enable=true              : enables h2 console put in application.properies . 
+											  : (http://localhost:8080/h2-console)
+3) spring.datasource.url=jdbc:h2:mem:testdb   :fix jdbc url 
+4) spring.jpa.show-sql=true                       : to show sql Queris how to demonly used by JPA
+
+***************************SQL Querie ******************************************
+SQL Queries 
+
+		insert into course(id,name,author) values (1,'Learn AWS','In28minutes');
+
+		select * from course;
+
+		delete from course where id=1;
+		
+*********************************** SpringJDBCTempalte *************************
+SpringJDBCTempalte 
+methods used update() 			-insert,update,delete resource
+			 queryForObject(id)	-to select course by id
+
+*********************************** JPA *****************************************
+EntityManager -use to manage entities
+Entity
+
+methods used: merge() 			-to add new course
+			  find(id) 			-to find course by id
+			  remove(course) 	- to delete existing course					  
+
+*************************************Spring Data JPA ****************************
+we need to use CourseSpringDataJpaRepository and use direct predefined methods like save(), delete() etc 
+												 also add custom methods in repository like findByAuthor() *make sure use naming standards and rules
+												 
+****************************************JPA Vs Hibernate*****************************************
+JPA defines specifications.Its an API
+  How to define entities
+  How to map attributes
+  How to manage the entities
+  
+ - Hibernate is one of the popular implementation of JPA	
+ - We can use JPA over Hibernate because we can't lock code using hibernate 								 
+
+												 
+ without writting demon code
